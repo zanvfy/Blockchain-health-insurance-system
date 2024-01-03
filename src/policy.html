@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>Policy form</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  <style type="text/css">
+    .box{
+      color: #fff;
+      padding: 20px;
+      display: none;
+      margin-top: 20px;
+    }
+    p {
+      padding: 10px;
+      border: 2px solid #000000;
+      }
+      
+    
+  </style>
+   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+   <script>
+     $(document).ready(function(){
+       $('input[type="radio"]').click(function(){
+         var inputValue = $(this).attr("value");
+         if(inputValue=='a'){
+           $('#policy_desc').css('display','block');
+           $('#policy_desc').html("<p>policy a description</p>");
+         }
+         if(inputValue=='b'){
+           $('#policy_desc').css('display','block');
+           $('#policy_desc').html("<p>policy b description</p>");
+         }
+         if(inputValue=='others'){
+           $('#policy_desc').css('display','block');
+           $('#policy_desc').html("<p>other policy description</p>");
+         }
+         /*var targetBox = $("." + inputValue);
+         console.log(targetBox);
+         $(".box").not(targetBox).hide();
+         $(targetBox).show();*/
+       });
+     });
+   </script>
+    </head>
+    <body>
+
+<div id="PolicyForm">
+    <div class="container">
+      <h1 style="text-align: center;">Policy Information</h1>
+      <form method="" action="">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div class="form-group">
+              <label class="control-label" for="address">Address</label>
+              <input type="text" class="form-control" id="address"  >
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 offset-md-2">
+            <div class="form-group">
+              <label class="control-label" for="policy_type">Policy Type</label><br>
+              <select id="policy_type">
+                <option value=""></option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+
+              </select>
+              <!--
+                <input type="radio"  id="policy_type" value="a" name="policy_type">a</input><br>
+              <input type="radio"  id="policy_type" value="b" name="policy_type">b</input><br>
+              <input type="radio"  id="policy_type" value="c" name="policy_type">c</input><br>
+              <input type="radio"  id="policy_type" value="others" name="policy_type">others</input>
+              -->
+              
+            </div>
+          </div>
+  
+            <div class="col-md-8 offset-md-2"  id="policy_desc" style="display: none">
+              <!-- <h1>Policy a description </h1> -->
+            </div>
+            <!-- <div class="b box" id="policy_b">
+              <p>Policy b description </p>
+            </div>
+            <div class="others box" id="policy_others">
+              <p>Policy others description </p>
+            </div> -->
+          </div>
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+            <div class="form-group" style="float: right;">
+              <button type="button" id="submit" class="btn btn-primary">submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+    </body>
+</html>
